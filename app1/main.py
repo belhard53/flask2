@@ -33,6 +33,8 @@ def get_db_connection():
 # Подключение к Redis
 cache = redis.Redis(host=os.getenv('REDIS_HOST', 'redis'), port=6379)
 
+sql_init()
+
 @app.route('/')
 def index():
     # Проверяем кэш
