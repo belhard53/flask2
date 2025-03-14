@@ -1,6 +1,12 @@
 # Используем официальный образ Python
 FROM python:3.13-slim
 
+# Устанавливаем зависимости для psycopg2
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
 
 WORKDIR /app
 
