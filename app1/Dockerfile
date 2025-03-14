@@ -1,20 +1,15 @@
 # Используем официальный образ Python
 FROM python:3.13-slim
 
-# Устанавливаем рабочую директорию
+
 WORKDIR /app
 
-# Копируем зависимости
-COPY requirements.txt .
+COPY . /app
 
-# Устанавливаем зависимости
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r /app/requirements.txt 
 
-# Копируем исходный код
-COPY . .
-
-# Указываем порт, который будет использовать приложение
-EXPOSE 5500
+EXPOSE 5000
 
 # Запускаем приложение
 CMD ["python", "app.py"]
