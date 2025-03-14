@@ -1,5 +1,5 @@
 main1 Для теста только  flask
-
+app1 для теста flask postgres redis
 
 
 
