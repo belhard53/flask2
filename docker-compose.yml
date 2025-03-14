@@ -21,8 +21,8 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: testdb
     volumes:
-      - postgres_data1:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Монтируем скрипт инициализации
+      - postgres_data1:/var/lib/postgresql/data # создаем волюм на уровне докер - /var/lib/docker/volumes
+      - ./init_sql:/docker-entrypoint-initdb.d  # Монтируем скрипт инициализации
 
-volumes:
+volumes: # создаем волюм на уровне докер - /var/lib/docker/volumes
   postgres_data1:
