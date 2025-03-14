@@ -5,6 +5,20 @@ import os
 
 app = Flask(__name__)
 
+
+def sql_init():
+    sqls = [
+        "CREATE TABLE IF NOT EXISTS test_table (id SERIAL PRIMARY KEY,name VARCHAR(50) NOT NULL);",
+        "INSERT INTO test_table (name) VALUES ('Test Data 1'), ('Test Data 2');"
+    ]
+    conn = get_db_connection()
+    cur = conn.cursor()
+    for sql in sqls:        
+        cur.execute(sql)        
+    cur.close()
+    conn.close()
+    
+
 # Подключение к PostgreSQL
 def get_db_connection():
     conn = psycopg2.connect(
