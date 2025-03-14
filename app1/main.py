@@ -17,15 +17,16 @@ def sql_init():
         cur.execute(sql)        
     cur.close()
     conn.close()
+    print("------------------------sql-------------------")
     
 
 # Подключение к PostgreSQL
 def get_db_connection():
     conn = psycopg2.connect(
-        host=os.getenv('DB_HOST', 'db'),
-        database=os.getenv('DB_NAME', 'testdb'),
-        user=os.getenv('DB_USER', 'user'),
-        password=os.getenv('DB_PASSWORD', 'password')
+        host="db",
+        database="testdb",
+        user="user",
+        password="password"
     )
     return conn
 
