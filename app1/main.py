@@ -15,7 +15,9 @@ def sql_init():
     cur = conn.cursor()
     for sql in sqls:        
         cur.execute(sql)        
-    cur.close()
+    
+    conn.commit()
+    cur.close()    
     conn.close()
     print("------------------------sql-------------------")
     
