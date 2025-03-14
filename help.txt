@@ -1,12 +1,51 @@
-main1 Для теста только  flask
+docker
+		play-with-docker.com
+			docker run hello-world
+			docker pull busybox
+			docker run busybox
+			docker run -d - откреппить от терминала - detached mode.
+			ocker images - скаченные 
+			docker run busybox echo "hello from busybox"
+			docker ps
+			docker ps -a
+			docker run -it busybox shls
+			docker run -it busybox sh - консоль внутри контейнера
+				rm -rf bin - удалить папку bin - перестанет работать Ls
+				выйти и запустить еще раз - будет все работать
+			docker run --help
+			docker rm 305297d7a235 - удалить отработтаный контейнер
+			docker rm $(docker ps -a -q -f status=exited) удалить все отработанные
+
+			docker run prakhar1989/static-site
+			docker run -d -P --name static-site prakhar1989/static-site
+				-P открыть все порты - откроет случайные
+			docker port static-site - посмотреть порты
+			docker run -p 8888:80 prakhar1989/static-site
+
+			Dockerfile
+				FROM python:3-onbuild
+				EXPOSE 5000
+				CMD ["python", "./app.py"]
+
+
+			docker build -t prakhar1989/catnip .
+			docker push prakhar1989/catnip
+
+
+			docker run --rm -v $(pwd):/app my-python-app
+				-v $(pwd):/app: Монтирует текущую директорию ($(pwd)) в директорию /app внутри контейнера.
+
+			docker run --rm -v $(pwd):/app python python app/main.py
+				запустит main.py 
+
+	linux
+
+		gunicorn -b 0.0.0.0:5000 -w 4 main:app 
+		gunicorn settings.wsgi -b 0.0.0.0:8000
+
+
+		
 
 
 
 
-docker build -t flask2 .
-
-# запустить постгрес - при запуске указываем пароль суперюзера
-docker run -e POSTGRES_PASSWORD=user1 -e POSTGRES_USER=user1 -e POSTGRES_DB=db1 -it postgres
-
-подключится к постгрес
-docker exec -it brave_perlman psql -U user1 -d db1
