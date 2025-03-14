@@ -25,4 +25,4 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Монтируем скрипт инициализации
 
 volumes:
-  postgres_data:
+  postgres_data1:
