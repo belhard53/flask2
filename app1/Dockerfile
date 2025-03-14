@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 5000
 
 # Запускаем приложение
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
