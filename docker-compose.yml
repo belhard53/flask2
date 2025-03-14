@@ -22,7 +22,7 @@ services:
       POSTGRES_DB: testdb
     volumes:
       - postgres_data1:/var/lib/postgresql/data # создаем волюм на уровне докер - /var/lib/docker/volumes
-      - /app1/init_sql:/docker-entrypoint-initdb.d  # Монтируем скрипт инициализации
+      # - /app1/init_sql:/docker-entrypoint-initdb.d  # Монтируем скрипт инициализации
 
 volumes: # создаем волюм на уровне докер - /var/lib/docker/volumes
   postgres_data1:
