@@ -13,4 +13,4 @@ def index():
 def sheet2():
     return render_template("2.html")
 
-app.run()
+app.run(host="0.0.0.0")
