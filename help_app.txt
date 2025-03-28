@@ -1,11 +1,5 @@
-main1 Для теста только  flask
-docker build -t flask2 .
-docker run flask2
-
 app1 для теста flask postgres redis
 docker-compose up --build
-
-
 
 
 # запустить постгрес - при запуске указываем пароль суперюзера
