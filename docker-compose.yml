@@ -31,7 +31,7 @@ services:
       ports:
         - "80:80"
       volumes:
-        - ./nginx.conf:/etc/nginx/nginx.conf:ro # :ro - только чтение read only
+        - ./app1/nginx.conf:/etc/nginx/nginx.conf:ro # :ro - только чтение read only
       depends_on:
         - web
       restart: unless-stopped
